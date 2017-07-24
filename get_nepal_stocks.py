@@ -5,7 +5,7 @@ import csv
 url = "http://www.nepalstock.com/main/todays_price/index/{}/stock-name/asc/"
 
 def get_page_info():
-    url = "http://www.nepalstock.com/main/todays_price/index/1/stock-name/asc/"
+    url = "http://www.nepalstock.com/main/todays_price"
     r = requests.get(url)
     soup = BeautifulSoup(r.text,"html.parser")
     number_of_page = int(soup.find("div",{"class":"pager"}).find_all("a")[-1].text.strip())
